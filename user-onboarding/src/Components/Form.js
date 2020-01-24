@@ -36,7 +36,7 @@ const UserForm = ({ status, values, errors, touched }) => {
                         {touched.password && errors.password && <p>{errors.password}</p>}
                     <Field type="password" name="password" placeholder="Password " value={values.password} />
                     </div>
-                    <label>Do you accept our Terms of Service?
+                    <label className="tos">Do you accept our Terms of Service?
                     <div>
                         {touched.tos && errors.tos && <p>{errors.tos}</p>}
                     <Field type="checkbox" name="tos" placeholder="Accept Terms of Service?" checked={values.tos} value={values.tos} />
@@ -48,11 +48,11 @@ const UserForm = ({ status, values, errors, touched }) => {
             </Form>
 
             {users.map(users => (
-                <div>
+                <div className='auContainer'>
                 <div className="active-users">Active Users</div>
                 <ul>
-                    <li>Name: {users.name}</li>
-                    <li>Email: {users.email}</li>
+                    <li>{users.name}</li>
+                    <li>{users.email}</li>
                 </ul>
                 </div>
             ))}
